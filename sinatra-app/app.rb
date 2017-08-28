@@ -23,7 +23,11 @@ price = gets.chomp
 new_product = ShopifyAPI::Product.new(
   title: title,
   product_type: product_type,
-  price: price,
+  variants:[
+    {
+    price: price
+    }
+  ],
   vendor: "MACBOOK"
 )
 puts "Creating new product"
